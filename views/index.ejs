@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Page</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <h1>Welcome to Hindustan Sports</h1>
+    <p>Your trusted place to register and connect</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#registration">Registration Form</a>
+      <a href="#" id="payLink">Pay Fees</a>
+      <a href="#footer">Contact Us</a>
+    </nav>
+
+  </header>
+
+  <% if (typeof success !=='undefined' ) { %>
+    <div class="<%= success ? 'success-message' : 'error-message' %>">
+      <%= success ? 'Message sent successfully!' : 'Failed to send message. Please try again.' %>
+    </div>
+    <% } %>
+
+      <section id="about" class="container">
+        <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+          <div class="image-box" style="margin: 0 auto;">
+            <img src="/img/logo.png" alt="" style="max-width: 100%;width: 200px;height: 200px;">
+          </div>
+          <div class="about-text" style="text-align: center;margin-bottom: 20px;">
+            <h2 style="margin-bottom: 20px;">About Us</h2>
+            <p>Hindustan Sports Management Pvt Ltd
+              At Hindustan Sports Management Pvt Ltd, we believe cricket is more than just a sport — it’s a passion that unites people, builds character, and opens doors to a brighter future.
+              
+              Founded with a vision to nurture talent and promote the spirit of the game, our company is dedicated to organizing professional cricket leagues, tournaments, and training programs for players of all age groups (10 to 60). Whether you're a rising star or a seasoned player, we offer the perfect platform to play, grow, and shine.
+              
+              We also provide quality cricket merchandise to support players and fans alike — because when you wear your passion, you play with pride.
+              
+              What We Offer:
+              🏆 Competitive Leagues & Tournaments
+              
+              🏏 Opportunities for Amateur & Semi-Pro Players
+              
+              🛒 Authentic Cricket Merchandise
+              
+              🌱 A Community that Grows Together
+              
+              Our tagline says it best:
+              "We offer you opportunity to play and grow — Grow together."
+              
+              Join us on the pitch — because your journey begins here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="registration" class="container card">
+        <div class="card-inner">
+          <div class="card-face card-front">
+            <h2 style="text-align:center;">Registration Form</h2>
+            <form action="/submit-form" method="POST">
+              <label for="name">Your Name</label>
+              <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+              <label for="email">Your Email</label>
+              <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" name="mobile" id="mobile" placeholder="Enter your mobile number" required
+                pattern="[0-9]{10}" maxlength="10">
+              <label for="state">State</label>
+              <input type="text" name="state" id="state" placeholder="Enter your state" required>
+              <label for="category">Category</label>
+              <select name="category" id="category" required>
+                <option value="">Select category</option>
+                <option value="batsman">Batsman</option>
+                <option value="bowler">Bowler</option>
+                <option value="all-rounder">All rounder</option>
+              </select>
+              <label for="message">Your Message</label>
+              <textarea name="message" id="message" placeholder="Write your message here" required></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <!-- BACK: QR / scanner side -->
+          <div class="card-face card-back">
+            <h2 style="text-align:center;">Pay Fees</h2>
+            <!-- put your real QR image in /public/images/qr.png -->
+            <img src="/img/scanner.png" alt="Scan to pay" class="qr">
+            <p style="text-align:center;">Scan this code to complete your payment.</p>
+            <button id="backBtn">← Back to Form</button>
+          </div>
+
+        </div>
+      </section>
+
+      <footer id="footer" class="container" style="text-align: center; margin-bottom: 40px;">
+        <p>Connect with us:</p>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">LinkedIn</a>
+      </footer>
+
+      <script>
+        const registration = document.getElementById('registration');
+        document.getElementById('payLink').addEventListener('click', e => {
+          e.preventDefault();
+          registration.classList.add('flip');
+        });
+        document.getElementById('backBtn').addEventListener('click', e => {
+          e.preventDefault();
+          registration.classList.remove('flip');
+        });
+      </script>
+
+
+</body>
+
+</html>
