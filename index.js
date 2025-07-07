@@ -59,4 +59,5 @@ app.post('/submit-form', async (req, res) => {
 });
 
 // Export serverless handler
+module.exports = app;
 module.exports = serverless(app);
