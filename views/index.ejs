@@ -36,24 +36,29 @@
           <div class="about-text" style="text-align: center;margin-bottom: 20px;">
             <h2 style="margin-bottom: 20px;">About Us</h2>
             <p>Hindustan Sports Management Pvt Ltd
-              At Hindustan Sports Management Pvt Ltd, we believe cricket is more than just a sport — it’s a passion that unites people, builds character, and opens doors to a brighter future.
-              
-              Founded with a vision to nurture talent and promote the spirit of the game, our company is dedicated to organizing professional cricket leagues, tournaments, and training programs for players of all age groups (10 to 60). Whether you're a rising star or a seasoned player, we offer the perfect platform to play, grow, and shine.
-              
-              We also provide quality cricket merchandise to support players and fans alike — because when you wear your passion, you play with pride.
-              
+              At Hindustan Sports Management Pvt Ltd, we believe cricket is more than just a sport — it’s a passion that
+              unites people, builds character, and opens doors to a brighter future.
+
+              Founded with a vision to nurture talent and promote the spirit of the game, our company is dedicated to
+              organizing professional cricket leagues, tournaments, and training programs for players of all age groups
+              (10 to 60). Whether you're a rising star or a seasoned player, we offer the perfect platform to play,
+              grow, and shine.
+
+              We also provide quality cricket merchandise to support players and fans alike — because when you wear your
+              passion, you play with pride.
+
               What We Offer:
               🏆 Competitive Leagues & Tournaments
-              
+
               🏏 Opportunities for Amateur & Semi-Pro Players
-              
+
               🛒 Authentic Cricket Merchandise
-              
+
               🌱 A Community that Grows Together
-              
+
               Our tagline says it best:
               "We offer you opportunity to play and grow — Grow together."
-              
+
               Join us on the pitch — because your journey begins here.</p>
           </div>
         </div>
@@ -108,7 +113,7 @@
         <a href="#">LinkedIn</a>
       </footer>
 
-      <script>
+      <!-- <script>
         const registration = document.getElementById('registration');
         document.getElementById('payLink').addEventListener('click', e => {
           e.preventDefault();
@@ -117,6 +122,34 @@
         document.getElementById('backBtn').addEventListener('click', e => {
           e.preventDefault();
           registration.classList.remove('flip');
+        });
+      </script> -->
+
+      <script>
+        const registration = document.getElementById('registration');
+        const payLink = document.getElementById('payLink');
+        const backBtn = document.getElementById('backBtn');
+
+        payLink.addEventListener('click', e => {
+          e.preventDefault();
+
+          // Flip the card
+          registration.classList.add('flip');
+
+          // Scroll after the flip animation (800ms in your CSS)
+          setTimeout(() => {
+            registration.scrollIntoView({ behavior: 'smooth' });
+          }, 800);
+        });
+
+        backBtn.addEventListener('click', e => {
+          e.preventDefault();
+          registration.classList.remove('flip');
+
+          // Optional: scroll to top of form after flip back
+          setTimeout(() => {
+            registration.scrollIntoView({ behavior: 'smooth' });
+          }, 800);
         });
       </script>
 
