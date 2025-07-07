@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
-app.get('/registration-form', (req, res) => {
+app.get('/', (req, res) => {
   res.render('index');
 });
 
