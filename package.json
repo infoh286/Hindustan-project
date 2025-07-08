@@ -4,7 +4,7 @@
   "description": "Simple server‑rendered contact/registration form using Node.js, Express, EJS and Nodemailer.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node api/local.js"
   },
   "dependencies": {
     "body-parser": "^1.20.0",
