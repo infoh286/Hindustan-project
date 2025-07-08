@@ -54,10 +54,11 @@ app.post('/submit-form', async (req, res) => {
   
     try {
       await transporter.sendMail(mailOptions);
-      res.render('index', { success: true });
+      res.redirect('https://hindustan-project.vercel.app/');
     } catch (err) {
       console.error('Error sending email:', err);
-      res.render('index', { success: false });
+      res.redirect('https://hindustan-project.vercel.app/');
+
     }
   });
 
