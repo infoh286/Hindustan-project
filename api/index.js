@@ -21,3 +21,5 @@ app.get('/', (req, res) => {
 });
 
 module.exports.handler = serverless(app);
+module.exports = app;
+
